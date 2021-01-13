@@ -12,6 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: juankaram/rust-musl-action@master
+    - uses: gmiam/rust-musl-action@master
     - name: Build-musl
       run: cargo build --target $BUILD_TARGET --release
