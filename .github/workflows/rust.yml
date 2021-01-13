@@ -19,5 +19,5 @@ jobs:
         args: cargo build --target $BUILD_TARGET --release
     - uses: actions/upload-artifact@v2
       with:
-        name: env.BINARY_NAME
+        name: ${{ env.BINARY_NAME }}
         path: target/x86_64-unknown-linux-musl/release/${{ env.BINARY_NAME }}*
