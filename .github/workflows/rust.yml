@@ -7,6 +7,7 @@ on:
 env:
   CARGO_TERM_COLOR: always
   BUILD_TARGET: x86_64-unknown-linux-musl
+  BINARY_NAME: k8s-operator
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,5 +19,5 @@ jobs:
         args: cargo build --target $BUILD_TARGET --release
     - uses: actions/upload-artifact@v2
       with:
-        name: ${{ format('{0}-{1}-{2}', env.BINARY_NAME, matrix.os, github.sha) }}
+        name: env.BINARY_NAME
         path: target/release/${{ env.BINARY_NAME }}*
