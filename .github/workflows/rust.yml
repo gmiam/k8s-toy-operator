@@ -15,7 +15,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
     - uses: gmiam/rust-musl-action@master
+    - uses: actions/checkout@v2
     - name: Build-musl
       run: cat .cargo/config && ls /usr && ls /usr/local && pwd  && ls && env | grep PKG && env | grep OPENSSL && rustup target add x86_64-unknown-linux-musl && cargo build --target $BUILD_TARGET --release
